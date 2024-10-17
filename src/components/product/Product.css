@@ -1,0 +1,102 @@
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.gap-6 {
+  gap: 1.5rem;
+}
+
+.my-8 {
+  margin: 2rem 0;
+}
+
+.w-40 {
+  width: 10rem;
+}
+
+.h-40 {
+  height: 10rem;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.bg-gray-100 {
+  background-color: #f3f4f6;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.object-contain {
+  object-fit: contain;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+/* Container for each card */
+.card-container {
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover and active state */
+.card-container:hover {
+  transform: translateY(-5px); /* Lift the card slightly */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+}
+
+.card-container:active {
+  transform: translateY(2px); /* Push down slightly on click */
+}
+
+/* Before and After pseudo-elements for decoration */
+.card-container::before,
+.card-container::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background-color: #0073e6; /* Blue underline */
+  transition: width 0.3s ease;
+}
+
+.card-container::before {
+  left: 0;
+}
+
+.card-container::after {
+  right: 0;
+}
+
+/* Expand the underline on hover */
+.card-container:hover::before,
+.card-container:hover::after {
+  width: 50%; /* Expand to half-width from both sides */
+}
+

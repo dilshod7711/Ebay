@@ -1,0 +1,96 @@
+.product-card {
+    position: relative;
+    max-width: 350px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-card::before,
+  .product-card::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    transition: transform 0.3s ease;
+  }
+  
+  .product-card::before {
+    top: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  
+  .product-card::after {
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  
+  .product-card:hover::before,
+  .product-card:hover::after {
+    transform: scaleX(1);
+  }
+  
+  .product-image {
+    transition: opacity 0.3s ease;
+  }
+  
+  .product-card:hover .product-image {
+    opacity: 0.85;
+  }
+  
+  .product-title, .product-description, .product-price, .product-category, .product-brand, .product-stock, .product-shipping {
+    padding: 8px 0;
+  }
+  
+  .product-buttons {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .primary-button, .secondary-button, .category-button {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+  }
+  
+  .primary-button::before, .secondary-button::before, .category-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #1e3a8a, #3b82f6);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: inherit;
+  }
+  
+  
+  .primary-button:hover::before {
+    opacity: 1;
+    background: linear-gradient(45deg, #1e3a8a, #3b82f6);
+  }
+  
+  .secondary-button:hover::before {
+    opacity: 1;
+    background: linear-gradient(45deg, #6b7280, #9ca3af);
+  }
+  
+  .category-button:hover::before {
+    opacity: 1;
+    background: linear-gradient(45deg, #059669, #34d399);
+  }
+  

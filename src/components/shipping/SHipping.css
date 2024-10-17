@@ -1,0 +1,124 @@
+.product-card {
+    position: relative; /* To position the pseudo-elements */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    background-color: white; /* Default background color */
+    overflow: hidden; /* Ensures pseudo-elements stay within the card boundaries */
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px); /* Slightly lifts the card on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Adds a subtle shadow effect */
+    background-color: #f9f9f9; /* Slightly changes the background on hover */
+  }
+  
+  .product-card:active {
+    transform: scale(0.95); /* Scales down slightly when clicked */
+  }
+  
+  .product-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0.1)); /* Adds a subtle gradient overlay */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1; /* Ensures it overlays the content but under text */
+  }
+  
+  .product-card:hover::before {
+    opacity: 1; /* Fades in the gradient overlay on hover */
+  }
+  
+  .product-card::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient line */
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .product-card:hover::after {
+    transform: scaleX(1); /* Expands the gradient line across the bottom on hover */
+  }
+  .loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 24px;
+    color: #333;
+}
+
+.product-card {
+    position: relative;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-card::before,
+.product-card::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    transition: transform 0.3s ease;
+}
+
+.product-card::before {
+    top: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.product-card::after {
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+}
+
+.product-card:hover::before,
+.product-card:hover::after {
+    transform: scaleX(1);
+}
+
+.product-image {
+    transition: opacity 0.3s ease;
+}
+
+.product-card:hover .product-image {
+    opacity: 0.85;
+}
+
+.product-category, .product-title, .product-description, .product-price, .product-rating, .product-old-price {
+    padding: 8px;
+}
+
+.featured-event {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.event-title, .discount-info, .details-info {
+    margin-bottom: 12px;
+}
+
+.shadow-light {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
